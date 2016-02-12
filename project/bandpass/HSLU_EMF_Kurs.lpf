@@ -1,0 +1,583 @@
+!--- Process Definition File Exported from NI AWR Design Environment (7670)
+!--- Name: HSLU.lpf
+!--- Project: C:\Users\zajoss\Documents\AWR Projects\Untitled Project.emp
+!--- Mon Feb 08 22:44:44 2016
+
+$VERSION_BEGIN 1200 $VERSION_END
+
+$PROCESS_SETUP_BEGIN
+
+	$DEFAULT_UNITS_BEGIN
+		LEN  m
+		FREQ G
+		CAP  p
+		IND  n
+		RES  none
+		COND none
+		TEMP DegC
+		ANG  Deg
+		TIME n
+		VOLT none
+		CUR  m
+		PWR  m
+	$DEFAULT_UNITS_END
+
+	$DBASE_UNIT_BEGIN
+		DRAW_RESOLUTION	0.01	m
+		GRID_SPACING	0.05	m
+	$DBASE_UNIT_END
+
+	$LINE_TYPE_BEGIN	"line 0.1 mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.000127		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 0.25mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.00025		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 0.5mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.0005		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 1mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.001		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 2mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.002		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 3.5mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.0035		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 7mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.007		5e-006		0
+	$LINE_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"Tan Resistor"
+		! -> Layer 		offset 		minWidth 		flags
+		"Tantalum"		-2e-006		4e-006		1
+		"Thick Metal"		0		5e-006		0
+	$STRUCT_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"Mesa Resistor"
+		! -> Layer 		offset 		minWidth 		flags
+		"Mesa"		-6e-006		5e-006		0
+		"Source Drain"		0		5e-006		0
+		"Thick Metal"		-2e-006		5e-006		0
+		"Nitride Etch"		-4e-006		4e-006		0
+	$STRUCT_TYPE_END
+
+	$CAP_DEFINE_BEGIN
+		! -> Layer 		offset 		minWidth 		flags
+		"Cap Bottom"		2e-006		5e-006		0
+		"Poly"		0		4e-006		0
+		"Thick Metal"		-2e-006		5e-006		0
+	$CAP_DEFINE_END
+
+	$VIA_DEFINE_BEGIN
+		! -> Layer 		offset 		mitre 		flags
+		"Via"		0		5e-006		1
+		"vtMetal"		0.000254		5e-006		0
+		"vtMetal-"		0.000508		5e-006		0
+		"vbMetal"		0.000254		5e-006		0
+		"vbMetal-"		0.000508		5e-006		0
+	$VIA_DEFINE_END
+
+	$PAD_DEFINE_BEGIN
+		! -> Layer 		offset 		minWidth 		flags
+		"Source Drain"		0		5e-006		0
+		"Cap Bottom"		-2e-006		5e-006		0
+		"Thick Metal"		-5e-006		5e-006		0
+		"Nitride Etch"		-7e-006		4e-006		0
+	$PAD_DEFINE_END
+
+	!--- Register drawing utility function used for drawing airbridges ------
+	$BRIDGE_DRAW_BEGIN AWR_MMIC $BRIDGE_DRAW_END
+
+	!--- Register cell to be used by default for route vias  ------
+	$ROUTE_VIA_CELL_BEGIN DEFROUTEVIA $ROUTE_VIA_CELL_END
+
+	!--- DRC Rule deck (path relative to lpf file) ------
+	$DRC_RULES_FILE_BEGIN "$MWO\drc_rules.txt" $DRC_RULES_FILE_END
+
+	!--- DRC engine: AWR, CALIBRE, ASSURA, CIRANOVA, or POLYTEDA ------
+	$DRC_ENGINE_BEGIN "AWR" $DRC_ENGINE_END
+
+	!--- Used by Connectivity tracer ------
+	$CONNECT_RULES_BEGIN 
+	$CONNECT_RULES_END 
+
+	!--- Default font used for layout ------
+	$DEFAULT_FONT_BEGIN "Arial" 	3000000	0	0 	$DEFAULT_FONT_END
+
+	$DEFAULT_VALUES_BEGIN
+		W		0.635		m
+		L		2.54		m
+		H		0.635		m
+		T		0.002		m
+		Er		3.2
+		Rho		1
+		Tand		0
+		C		1		p
+		Li		0		n
+		Rad		0		m
+		M		0.6
+		Cs		0.001		m
+		Extn		0.1		m
+	$DEFAULT_VALUES_END
+
+
+$PROCESS_SETUP_END
+
+
+!-------------- Drawing Layer Setup Defined Below ------------------------------
+$LAYER_SETUP_BEGIN
+
+$DRAW_LAYERS_BEGIN
+
+!--Layer Entry Descriptions--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+! Layer_Name              Line_Color    Fill_Color    Line_Style    Hatch_Style    Visible    Hatch_Visible    Frozen    3D_Thickness    3D_Z_Pos       Texture    Trans_Fill    Translucent    Texture_Scale    File_Layer    Options    Cloak    Hatch_Name    
+!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"Grid"                    0             0             0             1              1          1                0         8000            0              ""         0             0              0                "Obsolete"    0          0                      
+"EMSymbols"               0             0             0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          1                      
+"Default"                 0             0             0             0              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"SubcircuitAnnotation"    4259648       4259648       2             8              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Annotation"              16776960      16776960      2             8              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"RatsNest"                4210943       4210943       0             0              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"DrillHoles"              2105376       2105376       0             0              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"DimensionLines"          2105376       2105376       0             0              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Package"                 8388608       8388608       0             1              1          1                0         500000          100000         ""         0             0              0                "Obsolete"    0          0                      
+"Via"                     16711935      16711935      0             8              1          1                0         1.54e+006       -1.524e+006    ""         0             0              0                "Obsolete"    0          0                      
+"Leads"                   8388736       8388736       0             1              1          1                0         100000          0              ""         0             0              0                "Obsolete"    0          0                      
+"Bottom Resistor"         16711680      16711680      0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Top Resistor"            16711680      16711680      0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Top Metal"               32896         32896         0             1              1          1                0         20000           0              ""         0             0              0                "Obsolete"    0          0                      
+"Top Metal-"              16777215      16776960      0             17             1          1                0         1000            -20000         ""         0             0              0                "Obsolete"    0          0                      
+"Top Metal+"              32896         32896         0             1              1          1                0         1000            -20000         ""         0             0              0                "Obsolete"    0          0                      
+"Bottom Metal"            8421376       8421376       0             1              1          1                0         17780           -1.524e+006    ""         0             0              0                "Obsolete"    0          0                      
+"Bottom Metal-"           16777215      12351568      0             17             1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Bottom Metal+"           8421376       8421376       0             1              0          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Error"                   255           255           0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          1                      
+"board outline"           0             16777215      0             0              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"ErrorHighlight"          1113872       1113872       0             5              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          1                      
+"Highlight"               65535         65535         0             5              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          1                      
+"Selection"               65535         65535         0             5              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          1                      
+"SubSelection"            4210943       4210943       0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"DynamicHighlight"        65535         65535         2             0              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          1                      
+"#Via top"                6301766       11565206      0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"#Via bottom"             7098473       12361913      0             3              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Thick Metal"             7088128       12351568      0             6              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"#Resistor"               791587        6055027       0             4              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"0_0"                     806982        6070422       0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"#Device"                 6301766       11565206      0             1              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+"Nitride Etch"            2359401       7622841       0             7              1          1                0         0               0              ""         0             0              0                "Obsolete"    0          0                      
+$DRAW_LAYERS_END
+
+$LAYERS_CONFIG_BEGIN
+
+$CONFIG_NAME	"Default"
+! Layer_Name              Line_Color    Fill_Color    Line_Style    Hatch_Style    Visible    Hatch_Visible    Frozen    Trans_Fill    Translucent    Cloak    3D_Thickness    3D_Z_Pos       
+"#Device"                 6301766       11565206      0             1              1          1                0         0             0              0        0               0              
+"#Resistor"               791587        6055027       0             4              1          1                0         0             0              0        0               0              
+"#Via bottom"             7098473       12361913      0             3              1          1                0         0             0              0        0               0              
+"#Via top"                6301766       11565206      0             1              1          1                0         0             0              0        0               0              
+"0_0"                     806982        6070422       0             1              1          1                0         0             0              0        0               0              
+"Annotation"              16776960      16776960      2             8              1          1                0         0             0              0        0               0              
+"Bottom Metal"            8421376       8421376       0             1              1          1                0         0             0              0        17780           -1.524e+006    
+"Bottom Metal+"           8421376       8421376       0             1              0          1                0         0             0              0        0               0              
+"Bottom Metal-"           16777215      12351568      0             17             1          1                0         0             0              0        0               0              
+"Bottom Resistor"         16711680      16711680      0             1              1          1                0         0             0              0        0               0              
+"Default"                 0             0             0             0              1          1                0         0             0              0        0               0              
+"DimensionLines"          2105376       2105376       0             0              1          1                0         0             0              0        0               0              
+"DrillHoles"              2105376       2105376       0             0              1          1                0         0             0              0        0               0              
+"DynamicHighlight"        65535         65535         2             0              1          1                0         0             0              1        0               0              
+"EMSymbols"               0             0             0             1              1          1                0         0             0              1        0               0              
+"Error"                   255           255           0             1              1          1                0         0             0              1        0               0              
+"ErrorHighlight"          1113872       1113872       0             5              1          1                0         0             0              1        0               0              
+"Grid"                    0             0             0             1              1          1                0         0             0              0        8000            0              
+"Highlight"               65535         65535         0             5              1          1                0         0             0              1        0               0              
+"Leads"                   8388736       8388736       0             1              1          1                0         0             0              0        100000          0              
+"Nitride Etch"            2359401       7622841       0             7              1          1                0         0             0              0        0               0              
+"Package"                 8388608       8388608       0             1              1          1                0         0             0              0        500000          100000         
+"RatsNest"                4210943       4210943       0             0              1          1                0         0             0              0        0               0              
+"Selection"               65535         65535         0             5              1          1                0         0             0              1        0               0              
+"SubSelection"            4210943       4210943       0             1              1          1                0         0             0              0        0               0              
+"SubcircuitAnnotation"    4259648       4259648       2             8              1          1                0         0             0              0        0               0              
+"Thick Metal"             7088128       12351568      0             6              1          1                0         0             0              0        0               0              
+"Top Metal"               32896         32896         0             1              1          1                0         0             0              0        20000           0              
+"Top Metal+"              32896         32896         0             1              1          1                0         0             0              0        1000            -20000         
+"Top Metal-"              16777215      16776960      0             17             1          1                0         0             0              0        1000            -20000         
+"Top Resistor"            16711680      16711680      0             1              1          1                0         0             0              0        0               0              
+"Via"                     16711935      16711935      0             8              1          1                0         0             0              0        1.54e+006       -1.524e+006    
+"board outline"           0             16777215      0             0              1          1                0         0             0              0        0               0              
+
+$LAYERS_CONFIG_END
+
+$MODEL_LAYER_BEGIN
+
+$MAP_NAME	"Top Map"
+"Grid"                    "Grid"
+"EMSymbols"               "EMSymbols"
+"Default"                 "Default"
+"SubcircuitAnnotation"    "SubcircuitAnnotation"
+"Annotation"              "Annotation"
+"RatsNest"                "RatsNest"
+"DrillHoles"              "DrillHoles"
+"DimensionLines"          "DimensionLines"
+"Package"                 "Package"
+"Via"                     "Via"
+"Leads"                   "Leads"
+"Bottom Resistor"         "Bottom Resistor"
+"Top Resistor"            "Top Resistor"
+"Top Metal"               "Top Metal"
+"Top Metal-"              "Top Metal-"
+"Top Metal+"              "Top Metal+"
+"Bottom Metal"            "Bottom Metal"
+"Bottom Metal-"           "Bottom Metal-"
+"Bottom Metal+"           "Bottom Metal+"
+"Error"                   "Error"
+"board outline"           "board outline"
+"ErrorHighlight"          "ErrorHighlight"
+"Highlight"               "Highlight"
+"Selection"               "Selection"
+"SubSelection"            "SubSelection"
+"DynamicHighlight"        "DynamicHighlight"
+"#Via top"                "#Via top"
+"#Via bottom"             "#Via bottom"
+"Thick Metal"             "Thick Metal"
+"#Resistor"               "#Resistor"
+"0_0"                     "0_0"
+"#Device"                 "#Device"
+"Nitride Etch"            "Nitride Etch"
+"15_0"                    "Top Metal"
+"16_0"                    "Top Metal-"
+"17_0"                    "Top Metal+"
+"99_1"                    "Bottom Metal"
+"99_2"                    "Bottom Metal-"
+"99_3"                    "Bottom Metal+"
+"11_0"                    "Leads"
+"10_0"                    "Package"
+"Metal"                   "Top Metal"
+"Metal-"                  "Top Metal-"
+"vtMetal"                 "Top Metal"
+"vtMetal-"                "Top Metal-"
+"vbMetal"                 "Bottom Metal"
+"vbMetal-"                "Bottom Metal-"
+"NiCr"                    "Top Resistor"
+"Metal1"                  "Top Metal"
+"1_0"                     "Top Metal-"
+"13_0"                    "Grid"
+"134_0"                   "DrillHoles"
+"128_0"                   "Top Metal"
+"143_0"                   "Top Metal+"
+"130_0"                   "Default"
+
+$MAP_NAME	"Bottom Map"
+"Grid"                    "Grid"
+"EMSymbols"               "EMSymbols"
+"Default"                 "Default"
+"SubcircuitAnnotation"    "SubcircuitAnnotation"
+"Annotation"              "Annotation"
+"RatsNest"                "RatsNest"
+"DrillHoles"              "DrillHoles"
+"DimensionLines"          "DimensionLines"
+"Package"                 "Package"
+"Via"                     "Via"
+"Leads"                   "Leads"
+"Bottom Resistor"         "Bottom Resistor"
+"Top Resistor"            "Top Resistor"
+"Top Metal"               "Top Metal"
+"Top Metal-"              "Top Metal-"
+"Top Metal+"              "Top Metal+"
+"Bottom Metal"            "Bottom Metal"
+"Bottom Metal-"           "Bottom Metal-"
+"Bottom Metal+"           "Bottom Metal+"
+"Error"                   "Error"
+"board outline"           "board outline"
+"ErrorHighlight"          "ErrorHighlight"
+"Highlight"               "Highlight"
+"Selection"               "Selection"
+"SubSelection"            "SubSelection"
+"DynamicHighlight"        "DynamicHighlight"
+"#Via top"                "#Via top"
+"#Via bottom"             "#Via bottom"
+"Thick Metal"             "Thick Metal"
+"#Resistor"               "#Resistor"
+"0_0"                     "0_0"
+"#Device"                 "#Device"
+"Nitride Etch"            "Nitride Etch"
+"15_0"                    "Grid"
+"16_0"                    "Grid"
+"17_0"                    "Grid"
+"99_1"                    "Grid"
+"99_2"                    "Grid"
+"99_3"                    "Grid"
+"11_0"                    "Grid"
+"10_0"                    "Grid"
+"Metal"                   "Bottom Metal"
+"Metal-"                  "Bottom Metal-"
+"vtMetal"                 "Top Metal"
+"vtMetal-"                "Top Metal-"
+"vbMetal"                 "Bottom Metal"
+"vbMetal-"                "Bottom Metal-"
+"NiCr"                    "Bottom Resistor"
+"Metal1"                  "Bottom Metal"
+"1_0"                     "Grid"
+"13_0"                    "Grid"
+"134_0"                   "DrillHoles"
+"128_0"                   "Top Metal"
+"143_0"                   "Top Metal+"
+"130_0"                   "Default"
+
+$MODEL_LAYER_END
+
+$EM_MAPPING_BEGIN
+$EM_MAP	"Default" !name
+!layer_name em_layer is_via material via_extent
+"Grid"                    0	0	""	1
+"EMSymbols"               0	0	""	1
+"Default"                 0	0	""	1
+"SubcircuitAnnotation"    0	0	""	1
+"Annotation"              0	0	""	1
+"RatsNest"                0	0	""	1
+"DrillHoles"              0	0	"HOLE"	1
+"DimensionLines"          0	0	""	1
+"Package"                 0	0	""	1
+"Via"                     0	0	"Perfect Conductor"	1
+"Leads"                   0	0	""	1
+"Bottom Resistor"         0	0	""	1
+"Top Resistor"            0	0	""	1
+"Top Metal"               3	0	"1/2oz Cu"	1
+"Top Metal-"              0	0	""	1
+"Top Metal+"              3	0	"1/2oz Cu"	1
+"Bottom Metal"            5	0	"1/2oz Cu"	1
+"Bottom Metal-"           0	0	""	1
+"Bottom Metal+"           5	0	"1/2oz Cu"	1
+"Error"                   0	0	""	1
+"board outline"           0	0	""	1
+"ErrorHighlight"          0	0	""	1
+"Highlight"               0	0	""	1
+"Selection"               0	0	""	1
+"SubSelection"            0	0	""	1
+"DynamicHighlight"        0	0	""	1
+"#Via top"                0	0	""	1
+"#Via bottom"             0	0	""	1
+"Thick Metal"             0	0	""	1
+"#Resistor"               0	0	""	1
+"0_0"                     0	0	""	1
+"#Device"                 0	0	""	1
+"Nitride Etch"            0	0	""	1
+
+$EM_MAPPING_END
+
+
+$FILE_MAPPING_BEGIN
+$FILE_MAP	"Top"	2
+!layer_name file_layer skip
+"Grid"                    "N/A"         1
+"EMSymbols"               "N/A"         1
+"Default"                 "N/A"         1
+"SubcircuitAnnotation"    "N/A"         1
+"Annotation"              "N/A"         1
+"RatsNest"                "N/A"         1
+"DrillHoles"              "N/A"         1
+"DimensionLines"          "N/A"         1
+"Package"                 "N/A"         1
+"Via"                     "N/A"         1
+"Leads"                   "N/A"         0
+"Bottom Resistor"         "N/A"         1
+"Top Resistor"            "N/A"         1
+"Top Metal"               "N/A"         0
+"Top Metal-"              "N/A"         1
+"Top Metal+"              "N/A"         1
+"Bottom Metal"            "N/A"         1
+"Bottom Metal-"           "N/A"         1
+"Bottom Metal+"           "N/A"         1
+"Error"                   "N/A"         1
+"board outline"           "N/A"         1
+"ErrorHighlight"          "N/A"         1
+"Highlight"               "N/A"         1
+"Selection"               "N/A"         1
+"SubSelection"            "N/A"         1
+"DynamicHighlight"        "N/A"         1
+"#Via top"                "N/A"         1
+"#Via bottom"             "N/A"         1
+"Thick Metal"             "N/A"         1
+"#Resistor"               "N/A"         1
+"0_0"                     "N/A"         1
+"#Device"                 "N/A"         1
+"Nitride Etch"            "N/A"         1
+
+$FILE_MAP	"Bottom"	2
+!layer_name file_layer skip
+"Grid"                    "N/A"         1
+"EMSymbols"               "N/A"         1
+"Default"                 "N/A"         1
+"SubcircuitAnnotation"    "N/A"         1
+"Annotation"              "N/A"         1
+"RatsNest"                "N/A"         1
+"DrillHoles"              "N/A"         1
+"DimensionLines"          "N/A"         1
+"Package"                 "N/A"         1
+"Via"                     "N/A"         1
+"Leads"                   "N/A"         1
+"Bottom Resistor"         "N/A"         1
+"Top Resistor"            "N/A"         1
+"Top Metal"               "N/A"         1
+"Top Metal-"              "N/A"         1
+"Top Metal+"              "N/A"         1
+"Bottom Metal"            "N/A"         0
+"Bottom Metal-"           "N/A"         0
+"Bottom Metal+"           "N/A"         0
+"Error"                   "N/A"         1
+"board outline"           "N/A"         1
+"ErrorHighlight"          "N/A"         1
+"Highlight"               "N/A"         1
+"Selection"               "N/A"         1
+"SubSelection"            "N/A"         1
+"DynamicHighlight"        "N/A"         1
+"#Via top"                "N/A"         1
+"#Via bottom"             "N/A"         1
+"Thick Metal"             "N/A"         1
+"#Resistor"               "N/A"         1
+"0_0"                     "N/A"         1
+"#Device"                 "N/A"         1
+"Nitride Etch"            "N/A"         1
+
+$FILE_MAP	"Board"	2
+!layer_name file_layer skip
+"Grid"                    "N/A"         1
+"EMSymbols"               "N/A"         1
+"Default"                 "N/A"         1
+"SubcircuitAnnotation"    "N/A"         1
+"Annotation"              "N/A"         1
+"RatsNest"                "N/A"         1
+"DrillHoles"              "N/A"         1
+"DimensionLines"          "N/A"         1
+"Package"                 "N/A"         1
+"Via"                     "N/A"         1
+"Leads"                   "N/A"         1
+"Bottom Resistor"         "N/A"         1
+"Top Resistor"            "N/A"         1
+"Top Metal"               "N/A"         1
+"Top Metal-"              "N/A"         1
+"Top Metal+"              "N/A"         1
+"Bottom Metal"            "N/A"         1
+"Bottom Metal-"           "N/A"         1
+"Bottom Metal+"           "N/A"         1
+"Error"                   "N/A"         1
+"board outline"           "N/A"         0
+"ErrorHighlight"          "N/A"         1
+"Highlight"               "N/A"         1
+"Selection"               "N/A"         1
+"SubSelection"            "N/A"         1
+"DynamicHighlight"        "N/A"         1
+"#Via top"                "N/A"         1
+"#Via bottom"             "N/A"         1
+"Thick Metal"             "N/A"         1
+"#Resistor"               "N/A"         1
+"0_0"                     "N/A"         1
+"#Device"                 "N/A"         1
+"Nitride Etch"            "N/A"         1
+
+$FILE_MAPPING_END
+
+
+$DRILL_TABLE_BEGIN
+!drill_name drill_number drill_diameter
+"0.5"                     1	0.0005
+"0.6"                     2	0.0006
+"0.7"                     3	0.0007
+"0.8"                     4	0.0008
+"0.9"                     5	0.0009
+"1.0"                     6	0.001
+"1.1"                     7	0.0011
+"1.2"                     8	0.0012
+"1.3"                     9	0.0013
+"1.4"                     10	0.0014
+"1.5"                     11	0.0015
+"1.6"                     12	0.0016
+"2.0"                     13	0.002
+"2.1"                     14	0.0021
+"2.2"                     15	0.0022
+"3.0"                     16	0.003
+
+$DRILL_TABLE_END
+
+$LAYER_SETUP_END
+
+$ROUTER_SETUP_BEGIN
+
+$LAYERS_BEGIN
+!--------------------------------- Layer Entry Descriptions -----------------------------------------------------------
+! layer_name <layer_type> <layer_dir> min_width min_spacing route_grid route_grid_offset
+! <layer_type> = other, nwell, pwell, ndiff, pdiff, nimplant, pimplant, poly, cut, metal, non_contact_metal
+!                diffusion, recognition
+! <layer_dir> = none, horiz, vert
+!----------------------------------------------------------------------------------------------------------------------
+$LAYERS_END
+
+$CONNECT_LAYERS_BEGIN
+!--------------------------------- Connect layer -----------------------------------------------------------
+! <connect_type> <layer>
+! <connect_type> = UNKNOWN CAP_TOP_PLATE CAP_BOTTOM_PLATE SPIRAL_EXIT SPIRAL_TURN RESISTOR RESISTOR_2 RESISTOR_3
+!                 VIA_TOP VIA_BOTTOM DISABLED CAP_TOP_PLATE_2 CAP_BOTTOM_PLATE_2 CAP_TOP_PLATE_3 CAP_BOTTOM_PLATE_3 DEVICE
+!                 DEVICE_2 DEVICE_3
+!-----------------------------------------------------------------------------------------------------------
+$CONNECT_LAYERS_END
+
+$ROUTER_SETUP_END
+
+
+!------------- EM Simulation Setup Defined Below ----------------------------
+
+$EM_SETUP_BEGIN
+	$DEFAULT_EM_ENCLOSURE_BEGIN
+	!-----XDIM-----YDIM-----NX-----NY-----
+	!      (m)      (m)
+		0.0008 0.0008 80 80
+	$DEFAULT_EM_ENCLOSURE_END
+
+	$DEFAULT_EM_LAYERS_BEGIN
+	!	Hatch Patterns ------(0)  |||||(1)  \\\\\(2)  /////(3)  +++++(4)  xxxxx(5)
+	!
+	!-----T-----Er-----Tand-----Sigma-----Scale-----CondHatch-----ViaHatch-----
+	!    (m)                    (S/m)                 (0-5)         (0-5)
+	  0.0005 1 0 0 1 0 1
+	  2e-007 6.5 0.005 0 5 4 5
+	  0.0001 12.9 0.0001 0 1 2 3
+	$DEFAULT_EM_LAYERS_END
+
+	$EM_CONDUCTORS_BEGIN
+		$ELECTRICAL_SPEC_BEGIN
+		!-----Name-------rDC-------rHF-------+jX-------Red------Green-----Blue------
+		!              (ohm/sq)  (ohm/sq)  (ohm/sq)  <0-255>   <0-255>   <0-255>
+		   "Tantalum" 50 0 0 128 128 128
+		$ELECTRICAL_SPEC_END
+
+		$PHYSICAL_SPEC_BEGIN
+		!-----Name------T------Sigma-------Red------Green-----Blue------
+		!              (m)     (S/m)     <0-255>   <0-255>   <0-255>
+		   "Cap Bottom" 1e-006 4.1e+007 128 128 128
+		   "Plated Metal" 4e-006 4.1e+007 128 128 128
+		   "Thick Metal" 3e-006 4.1e+007 128 128 128
+		$PHYSICAL_SPEC_END
+	$EM_CONDUCTORS_END
+$EM_SETUP_END
+
