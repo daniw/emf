@@ -1,3 +1,4 @@
 DATA_SETS/
 TEMP/
 *.vin
+project/*/gerber
