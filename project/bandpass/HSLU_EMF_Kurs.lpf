@@ -63,10 +63,40 @@ $PROCESS_SETUP_BEGIN
 		"Metal-"		0.0035		5e-006		0
 	$LINE_TYPE_END
 
+	$LINE_TYPE_BEGIN	"line 5mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.005		5e-006		0
+	$LINE_TYPE_END
+
 	$LINE_TYPE_BEGIN	"line 7mm space"
 		! -> Layer 		offset 		minWidth 		flags
 		"Metal"		0		5e-006		0
 		"Metal-"		0.007		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 10mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.01		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 15mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.015		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 20mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.02		5e-006		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"line 30mm space"
+		! -> Layer 		offset 		minWidth 		flags
+		"Metal"		0		5e-006		0
+		"Metal-"		0.03		5e-006		0
 	$LINE_TYPE_END
 
 	$STRUCT_TYPE_BEGIN	"Tan Resistor"
